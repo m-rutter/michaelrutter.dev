@@ -11,5 +11,18 @@ highlight_code = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
+theme = "hyde"
+
+title = "Some( \"Michael Rutter\" )"
+description = "Software Developer, Philosophy PhD Dropout, British, American, Coffee Addict."
+
 [extra]
-# Put all your custom variables here
+hyde_theme = "theme-base-08"
+
+hyde_links = [
+    {url = "https://github.com/m-rutter", name = "GitHub: m-rutter"},
+    {url = "https://twitter.com/m_rutter", name = "Twitter: @m_rutter"},
+    {url = "https://www.linkedin.com/in/mrutter/", name = "LinkedIn"},
+
+    
+]
