@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+
+{% block content %}
+<article>
+    <header>
+        <h2>categories</h2>
+    </header>
+    <section>
+    {% if terms %}
+        <ul>
+            {% for term in terms %}
+                <li>
+                    <a href="{{ term.permalink }}">{{ term.name }}</a>({{ term.pages | length }})
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </section>
+</article>
+{% endblock content %}

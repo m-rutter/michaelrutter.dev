@@ -1,0 +1,15 @@
+{% extends "index.html" %} 
+
+{% block title %} {{ page.title }} | {{ config.title }} {% endblock title %}
+
+{% block content %}
+<article>
+  <header>
+    <section class="post-meta">
+      <time datetime="{{ page.date }}">{{ page.date | date(format="%d %B %Y") }}</time>
+    </section>
+    <h2 class="post-title f3 f2-l">{{ page.title }}</h2>
+  </header>
+  <section>{{ page.content | safe }}</section>
+</article>
+{% endblock content %}

@@ -1,5 +1,8 @@
 # The URL the site will be built for
 base_url = "https://m-rutter.github.io"
+title = "Michael Rutter"
+description = "Software Developer, Philosophy PhD Dropout, British, American, Coffee Addict."
+default_language = "en"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -7,22 +10,16 @@ compile_sass = true
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
+highlight_theme = "ayu-mirage"
 
 # Whether to build a search index to be used later on by a JavaScript library
-build_search_index = true
+build_search_index = false
 
-theme = "hyde"
+check_external_links = false
 
-title = "Some( \"Michael Rutter\" )"
-description = "Software Developer, Philosophy PhD Dropout, British, American, Coffee Addict."
+taxonomies = [
+    {name = "categories", paginate_by = 5},  # 5 items per page for a term
+]
+
 
 [extra]
-hyde_theme = "theme-base-08"
-
-hyde_links = [
-    {url = "https://github.com/m-rutter", name = "GitHub: m-rutter"},
-    {url = "https://twitter.com/m_rutter", name = "Twitter: @m_rutter"},
-    {url = "https://www.linkedin.com/in/mrutter/", name = "LinkedIn"},
-
-    
-]
