@@ -12,13 +12,14 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-columns: minmax(1rem, 1fr) minmax(auto, 48rem) minmax(1rem, 1fr);
+  grid-template-columns: minmax(20px, 1fr) minmax(auto, 48rem) minmax(20px, 1fr);
   grid-template-rows: auto 1fr auto;
   grid-row-gap: 2rem;
   grid-template-areas:
     ". nav-header ."
     ". content ."
     "footer footer footer";
+
 }
 
 .top-nav {
@@ -85,8 +86,6 @@ body {
   }
 }
 
-
-
 .mono {
   font-family: Consolas, monaco, monospace;
 }
@@ -116,4 +115,3 @@ article header h2 {
   text-align: center;
   color: #73d0ff;
 }
-
