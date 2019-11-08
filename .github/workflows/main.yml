@@ -1,15 +1,17 @@
-name: CI
-
-on: [push]
-
+on:
+  push:
+    branches:
+    - zola
+    
+name: Build Github Pages
 jobs:
   build:
     name: shalzz/zola-deploy-action
     runs-on: ubuntu-latest
-
     steps:
-    - uses: shalzz/zola-deploy-action@v0.9.0
+    - uses: actions/checkout@master
     - name: shalzz/zola-deploy-action
+      uses: shalzz/zola-deploy-action@v0.9.0
       env:
         PAGES_BRANCH: master
         TOKEN: ${{ secrets.TOKEN }}
