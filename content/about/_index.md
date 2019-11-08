@@ -2,13 +2,12 @@
 title = "about"
 +++
 
-Hi, I'm Michael, and this is my attempt to start a blog about programming and
-other half baked ideas as though it is still 2008. My day job is as a developer
-at a consultancy firm where I do mostly web development and business analytics
-projects. In a past life I was a Philosophy Grad student specialising in
-metaphysics and causation. I am a self taught programmer and I want to be a
-better programmer as it is something that I've come to enjoy in and of itself.
+Hello, I am Michael and this is my half baked attempt at starting a blog as
+though its still 2008. I work as a software developer for a small startup in
+London, UK where I mostly do web development. I am a self taught programmer and
+I want to be a better programmer as it is something that I've come to enjoy in
+and of itself. In a past life I was a philosphy grad student specialising in
+metaphysics.
 
-Topics that I am interested include programming, philosophy, politics,
-javascript, typescript, rust, d3, qlik, react, python, node, learning, and board
-games.
+Topics that I am interested in include programming, philosophy, politics,
+TypeScript, Rust, Haskell, d3, React, node, film, video games, and board games.
