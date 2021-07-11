@@ -17,6 +17,6 @@ For my day job I mostly write in TypeScript.
 Philosophy wise I was mostly interested in Metaphysics and causation.
 
 Politics wise I probably describe myself as member of the near extinct
-species of a liberal social democrat. I like Rawls and think we should have
+species of liberal social democrat. I like Rawls and think we should have
 better services and consider things like UBI or other soical guarantees that
 just make living more dignified and fair.
