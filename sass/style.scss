@@ -5,14 +5,10 @@
 @import "./global";
 @import "./code";
 
-body {
-  min-height: 100vh;
-  height: auto !important;
-}
 
 .wrapper {
   display: grid;
-  grid-template-columns: minmax(20px, 1fr) minmax(auto, 48rem) minmax(20px, 1fr);
+  grid-template-columns: minmax(20px, 1fr) minmax(auto, 90ch) minmax(20px, 1fr);
   grid-template-rows: auto 1fr auto;
   grid-row-gap: 2rem;
   grid-template-areas:
@@ -53,7 +49,11 @@ body {
   }
   a.active {
     color: #f40000;
-    border-bottom: 2px dashed #f40000;
+    border-bottom: 2px solid #f40000;
+    :hover {
+      border-color: transparent;
+
+    }
   }
 }
 
