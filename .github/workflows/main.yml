@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: shalzz/zola-deploy-action
-      uses: shalzz/zola-deploy-action@v0.9.0
+      uses: shalzz/zola-deploy-action@master
       env:
         PAGES_BRANCH: master
         TOKEN: ${{ secrets.TOKEN }}
