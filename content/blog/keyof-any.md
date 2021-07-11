@@ -1,5 +1,5 @@
 +++
-title = "Getting to the bottom of `keyof any` in TypeScript"
+title = "Getting to the bottom of \"keyof any\" in TypeScript"
 date = "2021-07-10"
 draft = true
 [taxonomies]
@@ -36,11 +36,11 @@ advanced topics in TypeScript.
 The `Record<K, T>` type is a very useful type for when you want to construct
 some kind of key-value pair that maps from some set of properties to a type.
 Although JavaScript has had builtin `Map` and `Set` objects for many years now
-with arguably a much better API than plain objects for this purpose, it is still
-the case that the JavaScript/TypeScript ecosystem largely assumes that users
-will use plain objects. That said, even when you can choose between them it can
-often be preferable to pick a plain object when all of the key-value pairs are
-static and unchanging.
+with arguably a much better API than plain objects for many purposes, it is
+still the case that the JavaScript/TypeScript ecosystem largely assumes that
+users will use plain objects. That said, even when you can choose between them
+it can often be preferable to pick a plain object when all of the key-value
+pairs are static and unchanging.
 
 For example, if you wanted to create a map from types of fruit to hex colors you
 might write something like this:

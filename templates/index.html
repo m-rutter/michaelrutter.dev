@@ -107,15 +107,18 @@
       <div class="posts">
         {% for page in paginator.pages %}
         <article class="post">
-          <header>
-            <section>
-              <time class="post-meta" datetime="{{page.date}}"
-                >{{page.date | date(format="%d %B %Y")}}</time
-              >
-            </section>
+          <header class="post-header">
             <a href="{{ page.permalink }}">
-              <h2>{{page.title}}</h2>
+              <h1>{{page.title}}</h1>
             </a>
+            <section>
+              <section class="post-meta">
+                <time datetime="{{ page.date }}"
+                  >{{ page.date | date(format="%d %B %Y") }}</time
+                >
+                <div>Reading time: {{ page.reading_time }} minutes</div>
+              </section>
+            </section>
           </header>
           <div class="post__summary">{{ page.summary | safe }}</div>
           <div class="read-more">

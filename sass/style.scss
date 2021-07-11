@@ -5,7 +5,6 @@
 @import "./global";
 @import "./code";
 
-
 .wrapper {
   display: grid;
   grid-template-columns: minmax(20px, 1fr) minmax(auto, 90ch) minmax(20px, 1fr);
@@ -15,7 +14,6 @@
     ". nav-header ."
     ". content ."
     "footer footer footer";
-
 }
 
 .top-nav {
@@ -52,7 +50,6 @@
     border-bottom: 2px solid #f40000;
     :hover {
       border-color: transparent;
-
     }
   }
 }
@@ -108,10 +105,35 @@ article header h2 {
 }
 
 .post-title {
-  text-align: center;
+  text-align: left;
 }
 
 .post-meta {
-  text-align: center;
-  color: #73d0ff;
+  text-align: left;
+  display: flex;
+  gap: 5px;
+
+  > :not(:last-child):after {
+    padding-left: 5px;
+    content: "·";
+  }
+}
+
+.post-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  h1 {
+    margin: 0;
+  }
+
+  a {
+    border-color: transparent;
+  }
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
