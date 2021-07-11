@@ -11,7 +11,7 @@ Topics that I am interested in include programming, philosophy, politics, video
 games, and board games.
 
 Programming langauges wise I'm quite interested in langauges with interesting
-type systems and langauges in the ML family like Typescript, Rust, and Haskell.
+type systems like Typescript, Rust, and Haskell.
 For my day job I mostly write in TypeScript.
 
 Philosophy wise I was mostly interested in Metaphysics and causation.
