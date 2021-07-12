@@ -2,7 +2,7 @@
 title = "About"
 +++
 
-I'm Michael and this is my half baked attempt at blogging as though its
+I'm Michael Rutter and this is my half baked attempt at blogging as though its
 still 2008. I work as a software developer in the UK where I mostly do frontend
 web development. I am a self taught programmer. In a past life I was a
 philosophy post-grad specialising in metaphysics.
