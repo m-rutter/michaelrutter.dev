@@ -6,42 +6,37 @@ draft = true
 categories = ["programming", "typescript", "types"]
 +++
 
-Learning about the what and why of `keyof any` has taught me a lot about
-TypesScript's `any`, `unknown` and `never` types. If you have encountered these
-types and want what is hopefully an intuitive an understanding of their
-behaviour, then you you might enjoy this dive into `keyof any` and the `Record`
-type.
+Recently I've been looking at the [utility type][1] delcarations that are
+included as part of the TypeScript compiler. If you are writing TypeScript you
+will have cause to use them at some point. A great thing about them is that they
+are not intrinics of the langauge, which means they are defined like [user
+defined types][2] using other language features. You could easily implement them
+yourself, and they are often **only 1-3 lines**. So they can be a good source
+for learning about some more advanced topics in TypeScript.
 
-Specifically what I am going to write about is why `keyof any` evaluates to
-`string | number | symbol`, and how it relates to `never` and `unknown`.
+This lead me to the starting point of this story in the type definition of
+`Record` in TypeScript:
+
+```ts
+type Record<K extends keyof any, T> = {
+  //                  ^^^^^^^^^  - ???
+  [P in K]: T;
+};
+```
+
+In particular the constaint on `K`, `keyof any`. Learning about the what
+`keyof any` means helped clairfy the role of TypesScript's `any`, `unknown` and
+`never` types. If you have encountered these types and want what is hopefully an
+intuitive an understanding of their behaviour, then you you might enjoy this
+dive into `keyof any` and the `Record` type.
 
 <!-- more -->
-
-## Utility types
-
-Recently I've been looking at the [utility type][1] delcarations that are
-included as part of the TypeScript compiler. These include some very useful type
-pairs like `Omit`/`Pick`, `Extract`/`Exclude`, and `Partial`/`Required` that I'm
-sure everyone with some TypeScript experience has had or at least will have
-cause to use at some point.
-
-A great thing about these types is that they aren't intrinics of the type
-system, which means they are defined like [regular user defined types][2]. You
-could easily implement them yourself, and they are often **only 1-3 lines of
-code**. So they can be a good source of learning about some slightly more
-advanced topics in TypeScript.
 
 ## The `Record` type
 
 The `Record<K, T>` type is a very useful type for when you want to construct
-some kind of key-value pair that maps from some set of properties to a type.
-Although JavaScript has had builtin `Map` and `Set` objects for many years now
-with arguably a much better API than plain objects for many purposes, it is
-still the case that the JavaScript/TypeScript ecosystem largely assumes that
-users will use plain objects. That said, even when you can choose between them
-it can often be preferable to pick a plain object when all of the key-value
-pairs are static and unchanging.
-
+some kind of key-value pair using object types that maps from some set of
+properties to a type, and for whatever reason a `Map` or `Set` isn't desirable.
 For example, if you wanted to create a map from types of fruit to hex colors you
 might write something like this:
 
@@ -72,12 +67,6 @@ back a `string`.
 ### Definition and `keyof any`
 
 The definition of `Record` is given as:
-
-```ts
-type Record<K extends keyof any, T> = {
-  [P in K]: T;
-};
-```
 
 ## stuff
 
