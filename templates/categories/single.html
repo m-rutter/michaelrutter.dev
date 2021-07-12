@@ -1,5 +1,7 @@
 {% extends "index.html" %}
 
+{% block title %} {{ config.title }} => {{ term.name }} {% endblock title %}
+
 {% block content %}
         <h2>{{ term.name }}</h2>
         {% for page in term.pages %}
