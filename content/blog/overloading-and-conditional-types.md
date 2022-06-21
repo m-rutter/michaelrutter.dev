@@ -4,11 +4,11 @@ date = "2022-03-18"
 [taxonomies]
 categories = ["programming", "typescript", "types"]
 +++
+## Quick Primer
 
+
+### Unions
 ```ts
-/** Quick Primer */
-
-// Unions
 interface Foo2 {
     bar: string
 }
@@ -26,26 +26,36 @@ if (d.type === "foo") {
 //  ^?
     d.value.toLocaleLowerCase()
 }
+```
 
-// Generics
+### Generics
+```ts
 
 function map<T, U>(type: T[], callback: (t: T) => U ): U[] {
     return type.map(callback)
 }
 
 const a = map([2, ""], (value) => value.toString());
+```
 
 
-// Conditional Types
+### Conditional Types
 
+```ts
 type T2 = 321312 extends number ? true : false;
-//    ^? 
+//    ^?
 
 type T3 = "1" extends 1 ? true : false;
 //    ^?
 
+```
 
-// Conditional Types + Generics == type level functions
+
+<!-- more -->
+
+### Conditional Types + Generics == type level functions
+
+```ts
 
 type Printable<T extends number | "foo" | "bar"> = T extends string ? true : false;
 
@@ -58,9 +68,11 @@ type T6 = Printable<number>
 //    ^?
 
 type A<T, U> = Extract<T, U>
+```
 
-/** Use Case lets put them all together for: type safe function overloading */
+### Use Case lets put them all together for: type safe function overloading
 
+```ts
 type Foo = { type: "foo"; payload: { value: string } };
 type Bar = { type: "bar" };
 type Baz = { type: "baz"; payload: { value: boolean; values: boolean[] } };

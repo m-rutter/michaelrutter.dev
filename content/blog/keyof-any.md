@@ -1,5 +1,5 @@
 +++
-title = "Getting to the bottom of \"keyof any\" in TypeScript"
+title = "Getting to the bottom of keyof any in TypeScript"
 date = "2021-07-10"
 draft = false
 [taxonomies]
@@ -7,20 +7,54 @@ categories = ["programming", "typescript", "types"]
 +++
 
 Recently I've been looking at the [utility type][1] delcarations that are
-included as part of the TypeScript compiler. If you are writing TypeScript you
-will have cause to use them at some point. A great thing about them is that they
-are not intrinics of the langauge, which means they are defined like [user
-defined types][2] using other language features. You could easily implement them
-yourself, and they are often **only 1-3 lines**. So they can be a good source
-for learning about some more advanced topics in TypeScript.
+included as part of the TypeScript compiler package. If you are writing any
+amount of TypeScript you will have cause to use them quite often. They include
+popular types like `Partial`, `Pick`, `Extract`, `NonNullable`, etc... A great
+thing about them is that they are not intrinics nor keywords of the langauge,
+which means they are defined like [user defined types][2] using other language
+features. You could easily implement them yourself, and they are often **only
+1-3 lines long**.
 
-This lead me to the starting point of this story in the type definition of
-`Record` in TypeScript:
+## The `Record` type
+
+I want to focus on the utility type, `Record`, which is defined in
+`lib.es5.d.ts` as:
 
 ```ts
+/**
+ * Construct a type with a set of properties K of type T
+ */
 type Record<K extends keyof any, T> = {
-  //                  ^^^^^^^^^  - ???
   [P in K]: T;
+};
+```
+
+The purpose of the type is to represent a mapping of one type (specifically a
+subset of `string`, `number`, and `symbol`) to another. It can be used to
+describe objects that act as an alternative to `Map<K, V>`, which is a common
+occurance in JavaScript (more common than actually using `Map` or `Set`
+introduced in ES2015).
+
+<!-- more -->
+
+#### Example using `string` as the key
+
+```ts
+const record1: Record<string, number> = {};
+record.foo = 1;
+const n: number = record.bar;
+```
+
+#### Example using string literal union as the key
+
+```ts
+type Key = "foo" | "bar" | "baz";
+
+// because its a finite union of string literals, they must to be initialised
+const record2: Record<Key, number> = {
+  foo: 1,
+  bar: 2,
+  baz: 3,
 };
 ```
 
@@ -29,10 +63,6 @@ In particular the constaint on `K`, `keyof any`. Learning about the what
 `never` types. If you have encountered these types and want what is hopefully an
 intuitive an understanding of their behaviour, then you you might enjoy this
 dive into `keyof any` and the `Record` type.
-
-<!-- more -->
-
-## The `Record` type
 
 The `Record<K, T>` type is a very useful type for when you want to construct
 some kind of key-value pair using object types that maps from some set of

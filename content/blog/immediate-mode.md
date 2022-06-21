@@ -19,6 +19,9 @@ its just:
             println!("clicked!")
         }
 ```
+
+<!-- more -->
+
 so in a way its a perfect fit for Rust
 because you have none of the borrowing concerns
 that event handler closures imply
