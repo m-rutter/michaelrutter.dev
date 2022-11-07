@@ -3,7 +3,7 @@ title = "Getting to the bottom of \"keyof any\" in TypeScript"
 date = "2021-07-10"
 draft = true
 [taxonomies]
-categories = ["programming", "typescript", "types"]
+tags = ["programming", "typescript", "types"]
 +++
 
 Recently I've been looking at the [utility type][1] delcarations that are

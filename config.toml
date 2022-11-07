@@ -17,8 +17,12 @@ build_search_index = false
 
 check_external_links = false
 
+generate_feed = true
+feed_filename = "rss.xml"
+feed_limit = 20
+
 taxonomies = [
-    {name = "categories", paginate_by = 5},  # 5 items per page for a term
+    {name = "tags", paginate_by = 5},  # 5 items per page for a term
 ]
 
 
