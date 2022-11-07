@@ -15,15 +15,27 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   line-height: 1.6;
-  color: #000000;
+  color: #000;
   min-height: 100vh;
   height: auto !important;
-  background-color: #f7f7f7;
+  background-color: #fcfcfc;
+}
+
+@media (prefers-color-scheme: dark) {
+
+
+html,
+body {
+  background-color: #242936;
+  color: #cbccc2;
+}
+
 }
 
 h1,
 h2,
-h3 {
+h3, 
+h4 {
   line-height: 1.2;
 }
 
