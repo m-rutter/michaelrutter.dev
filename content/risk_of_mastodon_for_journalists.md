@@ -23,7 +23,7 @@ with her audiences and her employers.
 
 <!-- more -->
 
-Nearly every journalist is invested in happens to Twitter. It is often their
+Nearly every journalist is invested in what happens to Twitter. It is often their
 first port of call when communicating with their audiences - more so than the
 newspaper, magazine, website, podcast, etc... that they call their employer.
 Having a large following on Twitter is valuable not only to employers to
@@ -99,4 +99,4 @@ scenario for maintaining the status quo is that each journalist self-hosts their
 own server or some independent and reliable operator(s) for journalists arises
 to take Twitter's place. I think a more likely future is that given the
 opportunity by publishers to take back control over... publishing, they will
-reach for control quickly as they can to rein in their employees.
+reach for control as quickly as they can to rein in their employees.
