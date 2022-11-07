@@ -1,6 +1,6 @@
 +++
 title = "Getting to the bottom of \"keyof any\" in TypeScript"
-date = "2021-07-10"
+date = "2022-11-07"
 draft = true
 [taxonomies]
 tags = ["programming", "typescript", "types"]
