@@ -6,6 +6,7 @@
 @import "./code";
 
 .wrapper {
+  padding: 0.5rem;
   display: grid;
   grid-template-columns: minmax(20px, 1fr) minmax(auto, 90ch) minmax(20px, 1fr);
   grid-template-rows: auto 1fr auto;
@@ -129,5 +130,5 @@ article header h2 {
 .posts {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  grid-row-gap: 1rem;
 }

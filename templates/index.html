@@ -12,9 +12,8 @@
       crossorigin="anonymous"
     />
 
-    {% block rss %}
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
-    {% endblock %}
+    {% block rss %} <link rel="alternate" type="application/rss+xml" title="RSS"
+    href="{{ get_url(path="rss.xml", trailing_slash=false) }}"> {% endblock %}
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="196x196" href="/favicon-192.png" />
@@ -42,44 +41,22 @@
     <nav class="nav-header">
       <h1 class="header-title mono f5 f3-ns f3-l">
         <a href="/">
-          <span style="color: #ffa759">Some</span
-          ><span>(Michael) =></span>
+          <span style="color: #ffa759">Some</span>(<span style="color: #ffa759">Michael</span>) =>
+          </span>
         </a>
       </h1>
 
       <ul class="nav-links">
         <li>
           <a
-            class="
-              {%
-              if
-              current_path
-              and
-              current_path
-              ==
-              '/'
-              %}active{%
-              endif
-              %}
-            "
+            class="{% if current_path and current_path == '/' %}active{% endif %}"
             href="/"
             >blog</a
           >
         </li>
         <li>
           <a
-            class="
-              {%
-              if
-              current_path
-              and
-              current_path
-              ==
-              '/about/'
-              %}active{%
-              endif
-              %}
-            "
+            class="{% if current_path and current_path == '/about/' %}active{% endif %}"
             href="/about/"
             >about</a
           >
@@ -87,18 +64,7 @@
         <!-- <li><a class="{% if current_path and current_path == 'projects/' %}active{% endif %}" href="/projects">projects</a></li> -->
         <li>
           <a
-            class="
-              {%
-              if
-              current_path
-              and
-              current_path
-              ==
-              'tags'
-              %}active{%
-              endif
-              %}
-            "
+            class="{% if current_path and current_path == 'tags' %}active{% endif %}"
             href="/tags/"
             >tags</a
           >
@@ -109,13 +75,13 @@
     <main class="main">
       {% block content %} {{ section.content | safe }}
       <div class="posts">
-      {% for page in paginator.pages %}
+        {% for page in paginator.pages %}
         <article class="post">
           <header class="post-header">
             <a href="{{ page.permalink }}">
               <h1>{{page.title}}</h1>
             </a>
-              <h4>{{page.description}}</h4>
+            <h4>{{page.description}}</h4>
             <section>
               <section class="post-meta">
                 <time datetime="{{ page.date }}"
@@ -130,7 +96,7 @@
             <a href="{{ page.permalink }}">Read more...</a>
           </div>
         </article>
-      {% endfor %}
+        {% endfor %}
       </div>
       <nav class="pagination">
         {% if paginator.previous %}
