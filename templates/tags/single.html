@@ -8,7 +8,7 @@
             <div class="taxonomy__item">
                 <span class="taxonomy__item__time">{{ page.date | date(format="%F") }}</span>
                 <span class="taxonomy__item__title">
-                    <a href="{{ page.permalink }}">{{ page.title }}</a>
+                    <a href="{{ page.permalink }}">{{ page.title }} - {{page.description}}</a>
                 </span>
             </div>
         {% endfor %}

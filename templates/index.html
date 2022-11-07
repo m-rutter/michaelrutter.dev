@@ -11,6 +11,10 @@
       integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
       crossorigin="anonymous"
     />
+
+    {% block rss %}
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
+    {% endblock %}
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="196x196" href="/favicon-192.png" />
@@ -37,7 +41,7 @@
   <body class="wrapper">
     <nav class="nav-header">
       <h1 class="header-title mono f5 f3-ns f3-l">
-        <a href="/blog/">
+        <a href="/">
           <span style="color: #ffa759">Some</span
           ><span>(Michael) =></span>
         </a>
@@ -53,12 +57,12 @@
               and
               current_path
               ==
-              'blog/'
+              '/'
               %}active{%
               endif
               %}
             "
-            href="/blog/"
+            href="/"
             >blog</a
           >
         </li>
@@ -71,7 +75,7 @@
               and
               current_path
               ==
-              'about/'
+              '/about/'
               %}active{%
               endif
               %}
@@ -90,13 +94,13 @@
               and
               current_path
               ==
-              'categories'
+              'tags'
               %}active{%
               endif
               %}
             "
-            href="/categories/"
-            >categories</a
+            href="/tags/"
+            >tags</a
           >
         </li>
       </ul>
@@ -105,7 +109,7 @@
     <main class="main">
       {% block content %} {{ section.content | safe }}
       <div class="posts">
-        {% for page in paginator.pages %}
+      {% for page in paginator.pages %}
         <article class="post">
           <header class="post-header">
             <a href="{{ page.permalink }}">
@@ -125,7 +129,7 @@
             <a href="{{ page.permalink }}">Read more...</a>
           </div>
         </article>
-        {% endfor %}
+      {% endfor %}
       </div>
       <nav class="pagination">
         {% if paginator.previous %}
