@@ -5,12 +5,17 @@
 {% block content %}
         <h2>{{ term.name }}</h2>
         {% for page in term.pages %}
-            <div class="taxonomy__item">
-                <span class="taxonomy__item__time">{{ page.date | date(format="%F") }}</span>
-                <span class="taxonomy__item__title">
-                    <a href="{{ page.permalink }}">{{ page.title }} - {{page.description}}</a>
-                </span>
-            </div>
+          <dl>
+            <dt>
+              <time>{{ page.date | date(format="%F") }}</time>
+            </dt>
+            <dd>
+              <a href="{{ page.permalink }}">
+                <h2>{{ page.title }}</h2> 
+                <h4>{{page.description}}</h4>
+              </a>
+            </dd>
+          </dl>
         {% endfor %}
     </div>
 {% endblock content %}
