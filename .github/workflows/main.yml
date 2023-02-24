@@ -9,8 +9,8 @@ jobs:
     name: shalzz/zola-deploy-action
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - uses: shalzz/zola-deploy-action@master
+    - uses: actions/checkout@v3.0.0
+    - uses: shalzz/zola-deploy-action@v0.16.1-1 
       env:
         PAGES_BRANCH: master
         BUILD_DIR: .
