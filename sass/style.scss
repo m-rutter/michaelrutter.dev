@@ -6,7 +6,7 @@
 @import "./code";
 
 .wrapper {
-  padding: 0.5rem;
+  padding: 2rem;
   display: grid;
   grid-template-columns: minmax(20px, 1fr) minmax(auto, 90ch) minmax(20px, 1fr);
   grid-template-rows: auto 1fr auto;
