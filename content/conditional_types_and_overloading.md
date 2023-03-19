@@ -88,7 +88,7 @@ type T2 = 123 extends number ? true : false;
 type T3 = "1" extends 1 ? true : false;
 //   ^? type T3 = true
 
-// a type level function that takes a single type as an argument and returns either `true` or `false`
+// a type level function that takes a single type as an argument and returns either the type `true` or the type `false`
 type Printable<T> = T extends string ? true : false;
 
 type T4 = Printable<{ bar: string }>;
@@ -99,7 +99,7 @@ In this example, `T2` is a conditional type that evaluates to true because `123`
 extends `number`, and `T3` evaluates to false because a string `"1"` does not
 extend `number`. `T4` evaluates to `false` because the object type
 `{bar: string}` does not extend string. The `Printable` type is effectively a
-type level function that takes a single type as an argument and return another
+type level function that takes a single type as an argument and returns another
 type.
 
 ## TypeScript function overloads are not type safe
@@ -112,21 +112,21 @@ arguments you provide.
 
 Below is an example from Java of a overloaded method called `addToken`. It has
 two implementations, one that takes a single argument and another that takes
-two. Depending upon the arity of the arugments used to call it, one of the two
+two. Depending upon the arity of the arguments used to call it, one of the two
 implementations is used. The convenience of this feature is that it groups
-implementations that conceptually do the same thing, and saves defining seperate
+implementations that conceptually do the same thing, and saves defining separate
 names like `addToken` and `addTokenWithLiteral` for all of the possible
 variants:
 
 ```java
 class Scanner {
     // ...
-    // This implementation takes a single arugment of type `TokenType`
+    // This implementation takes a single argument of type `TokenType`
 	private void addToken(TokenType type) {
 	    // ...
 	}
 
-    // This implementation takes two arugments of type `TokenType` and `Object`
+    // This implementation takes two arguments of type `TokenType` and `Object`
 	private void addToken(TokenType type, Object literal) {
 	    // ...
 	}
@@ -241,13 +241,13 @@ function depending upon the input value, and they all appear to be correct. This
 looks a lot like function overloading!
 
 As with the previous examples, we have a single implementing function. However,
-this function takes a single arugment `T` that is generic over a union of
-`ActionType` variants, one of three different string literal types. That generic
-value is passed into to a type level function called `InferFromActionType` as
-the return type of the function. This in turn is used by the builtin `Extract`
+this function takes a single argument `T` that is a generic with the constraint
+of `ActionType`, one of three different string literal types. That generic value
+is passed into to a type level function called `InferFromActionType` as the
+return type of the function. This in turn is used by the builtin `Extract`
 conditional type, which will pick from the union of `ActionTypeWithPayload` the
-approatately matching return type given the input arugment. It would appear that
-we have successfully recreated typescript function overloading using other
+appropriately matching return type given the input argument. It would appear
+that we have successfully recreated typescript function overloading using other
 features of the language.
 
 This is the point of frustration for users because when they turn to
@@ -268,13 +268,13 @@ function getAction2<T extends ActionType>(type: T): InferFromActionType<T> {
 }
 ```
 
-The stumbling block here is that in the presense of generic types, the
+The stumbling block here is that in the presence of generic types, the
 evaluation of conditional types is deferred until the generic value is resolved.
 The conditional return type of `getAction` will only be evaluated when the
 function is called.
 
 In TypeScript you cannot evaluate a conditional type level function like
-`InferFromActionType` if you give it a generic arugment because of this fact. A
+`InferFromActionType` if you give it a generic argument because of this fact. A
 simple illustration of this limitation can be seen below. Despite the fact that
 `T` has a constraint that it extends `string`, the conditional type remains
 unevaluated within the body of the function `tan` because `T` is a generic type.
@@ -294,7 +294,7 @@ function tan<T extends string>(_: T) {
 In both the built-in function overloads and our experimentation with combining
 other language features, we have failed to achieve type-safe overloading
 function bodies. In both cases, we were successfully able to create APIs that
-might be desirable for consumers but left implementors without assistance.
+might be desirable for consumers but left implementers without assistance.
 
 The lesson I hope you take away is that if you went down this path, you aren't
 alone. Many others thought it might be possible to combine these features, but
@@ -302,7 +302,7 @@ the language as it stands today does not enable this pattern. However, this
 shouldn't discourage you from seeking alternative solutions. So, as some parting
 words, I can suggest some advice for moving forward.
 
-### Solution 1: Implement seperate functions
+### Solution 1: Implement separate functions
 
 Take a step back. Reconsider the problem the Java case was trying to solve. They
 had separate implementations with a common name, which isn't a feature of
@@ -333,7 +333,7 @@ to accept that you will have to do extra work to ensure that you are satisfying
 overloaded signatures. This is a corner of the language where you aren't going
 to get much help, but it might be a worthwhile sacrifice for your users.
 
-What I would urge you to consider is to experiment with findind the right
-balance between type safety and a user-friendly API. You will alway find
+What I would urge you to consider is to experiment with finding the right
+balance between type safety and a user-friendly API. You will always find
 language limitations for what you are trying to do, but that doesn't necessarily
 mean you can't find compromises or workaround.
