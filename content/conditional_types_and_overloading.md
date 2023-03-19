@@ -28,9 +28,8 @@ already familiar with these concepts.
 
 ### Union types
 
-Generics in TypeScript provide a way to define reusable code that can work with
-multiple types. They allow you to create functions that can operate on different
-types while preserving type information of the inputs in its outputs.
+Union types in TypeScript allow you to define a type that can be one of several
+types.
 
 ```ts
 interface Yan {
