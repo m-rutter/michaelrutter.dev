@@ -1,7 +1,7 @@
 +++
 title = "TypeScript Type Safety: Exploring Overloads & Conditional Types"
 description = "Delving into TypeScript function overloads, union types, and common challenges in search for type safety"
-date = "2023-02-22"
+date = "2023-03-19"
 draft = false
 [taxonomies]
 tags = ["typescript", "programming", "types", "java", "type-level-programming"]
