@@ -209,64 +209,46 @@ users of the language construct something along these lines:
 [Playground link](https://www.typescriptlang.org/play?ssl=40&ssc=1&pln=31&pc=1#code/C4TwDgpgBAmghgOygXigbyqSAuKAiERPAbijDhABsB7OAE1wwDc5KBXCXAZ2ACcBLBAHMoAXzHEAUFmgAVRCnSZwnfMCITpKqLIjAAFhF5xFaSVGU41ew8ZLmyFGvUZQW7VQCNq1ShESk7hxcuN6+-ggA2gC6mqJSkgD0iVAmbAj81EjUAGZakFAAggDGwJkIsioA6vwGAApOtHSK8EgAPjoKHboGRnBSMkWl5ZUFqCVlWaMQNfWN9JF4MnjRCYMAkgg5RgBivNQAthMjKgA8slAQAB7AEAh0XEOTFSoAfIoAojfGpacOx1NqrV9A0qE0ADQODAyXAXUSSV5rbRfOAHMB+RSbba8PaHAEvSCnAhERFJFIWAB6AH5JJI6BBipQ4LxoDl0sMslAhHp8edLjc7g8nidIK8ABQOGE6SQASlwWN2+yOHIJEHOpMkxSyPFSKoAjIpucB8WLiQg8DKpMkLJSaVqEDq4CqAEyGnkq03qc2Wsk2qDUzXa4C654AZjdxo9SxsfQtVvJttpbIQKq57uezr511u90e+Om4qlsjlUAVOKV+bOsneZgs-ByUDFg2QLfwhG96AcFntOvbuFapksqjNeHBjjBLiUQWHeDEmi7UBZwDYvCQ7dI1umUAA5K1t1B+I8ENRg3AuFx+EIEHBPBjgNQhzuy7jlc9purtwA6BzwyX6fYAO5QAgEBAR8vD7LwpoAHIngeaJ+Acdy3HQcaSPCQA)
 
 ```ts
-type Yan = { type: "yan"; payload: { value: string } };
-type Tan = { type: "tan" };
-type Tethera = {
-  type: "tethera";
-  payload: { value: boolean; values: boolean[] };
-};
+// This is a type level function and a conditional type that maps a string literal to a corresponding type
+type PrimitiveMap<T extends "yan" | "tan"> = T extends "yan" ? string : number;
 
-// a union of
-type ActionTypeWithPayload = Yan | Tan | Tethera;
-type ActionType = ActionTypeWithPayload["type"];
+// This generic function accepts a string literal as an input and returns the corresponding mapped from our function `PrimativeMap`
+declare function getValue<T extends "yan" | "tan">(key: T): PrimitiveMap<T>;
 
-type InferFromActionType<T extends ActionType> = Extract<
-  ActionTypeWithPayload,
-  { type: T }
->;
-
-type Example = InferFromActionType<"yan">;
-//   ^? type Example = { type: "yan"; payload: { value: string } }
-
-declare function getAction<T extends ActionType>(
-  type: T
-): InferFromActionType<T>;
-
-const action1 = getAction("yan");
-//    ^? const action1: Yan
-const action2 = getAction("tan");
-//    ^? const action2: Tan
-const action3 = getAction("tethera");
-//    ^? const action3: Tethera
+const stringValue = getValue("yan"); // Expected return type: string
+const numberValue = getValue("tan"); // Expected return type: number
 ```
 
-Well this looks very promising! If you inspect the values of `action1`,
-`action2`, and `action2` we get completely different return types from the same
+Well this looks very promising! If you inspect the values of `stringValue` and
+`numberValue` we get completely different return types from the same
 function depending upon the input value, and they all appear to be correct. This
 looks a lot like function overloading!
 
 As with the previous examples, we have a single implementing function. However,
 this function takes a single argument `T` that is a generic with the constraint
-of `ActionType`, one of three different string literal types. That generic value
-is passed into to a type level function called `InferFromActionType` as the
-return type of the function. This in turn is used by the builtin `Extract`
-conditional type, which will pick from the union of `ActionTypeWithPayload` the
-appropriately matching return type given the input argument. It would appear
-that we have successfully recreated typescript function overloading using other
-features of the language.
+of `"yan" | "tan"`. That generic value is passed into to a type level function 
+called `PrimitiveMap` as the return type of the function. This conditional type 
+will pick the appropriately matching return type given the input argument. It 
+would appear that we have successfully recreated typescript function overloading
+using other features of the language.
 
 This is the point of frustration for users because when they turn to
 implementing the function, they find that they cannot implement its body. The
 only way we could implement the body of getAction is if we assert that the
-return value is `InferFromActionType<T>`. Asserting this defeats the entire
+return value is `PrimitiveMap<T>`. Asserting this defeats the entire
 purpose of this exercise, which was to create a type-safe overload.
 
 ```ts
-function getAction2<T extends ActionType>(type: T): InferFromActionType<T> {
-  if (type === "yan") {
-    const yan: Yan = { type: "yan", payload: { value: "" } };
+// Now we attempt to implement the getValue function
+function getValueImplementation<T extends "yan" | "tan">(key: T): PrimitiveMap<T> {
+  if (key === "yan") {
+    const yanValue: string = "Yan value";
+    return yanValue; // Type 'string' is not assignable to type 'PrimitiveMap<T>'
+  }
 
-    return yan; // Type 'Yan' is not assignable to type 'InferFromActionType<T>'.
+  if (key === "tan") {
+    const tanValue: number = 42;
+    return tanValue; // Type 'number' is not assignable to type 'PrimitiveMap<T>'
   }
 
   throw new Error("Not implemented");
@@ -275,11 +257,11 @@ function getAction2<T extends ActionType>(type: T): InferFromActionType<T> {
 
 The stumbling block here is that in the presence of generic types, the
 evaluation of conditional types is deferred until the generic value is resolved.
-The conditional return type of `getAction` will only be evaluated when the
+The conditional return type of `getValueImplementation` will only be evaluated when the
 function is called.
 
 In TypeScript you cannot evaluate a conditional type level function like
-`InferFromActionType` if you give it a generic argument because of this fact. A
+`PrimitiveMap` if you give it a generic argument because of this fact. A
 simple illustration of this limitation can be seen below. Despite the fact that
 `T` has a constraint that it extends `string`, the conditional type remains
 unevaluated within the body of the function `tan` because `T` is a generic type.
