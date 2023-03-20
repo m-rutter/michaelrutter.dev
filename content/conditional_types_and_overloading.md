@@ -182,15 +182,20 @@ the second signature overload, but the implementing function will return the
 wrong data type resulting in a runtime type error.
 
 ```ts
+// here we have two overloaded function signatures
 function yan(tan: string, tethera: number): string;
 function yan(tan: number, tethera: string): number;
+
+// the implementation signature must handle both cases from above, however, the return type of the implementation is not checked against the signatures above
 function yan(tan: string | number, tethera: string | number): string | number {
-  return ""; // always returns a string, which satisfies the implementing siganture
+  // This implementating function body always returns a string, which is incorrect for the second overload signature
+  return "";
 }
 
-const num = yan(0, "");
-//    ^? const num: number
-num.toFixed(0); // runtime error: toFixed is not a function
+// When using the 'yan' function with these arugments TypeScript will select the second overload signature
+const num = yan(0, ""); // Expected return type: number
+num.toFixed(0); // Runtime error: toFixed is not a function
+
 ```
 
 ## Can we create our own type-safe function overloads?
