@@ -299,15 +299,11 @@ right at us. Have separately named function implementations for each of your
 "overloads."
 
 ```ts
-function createYanAction(): Yan {
+function createYan(): Yan {
   //...
 }
 
-function createTanAction(): Tan {
-  //...
-}
-
-function createTeheraAction(): Tethera {
+function createTan(): Tan {
   //...
 }
 ```
