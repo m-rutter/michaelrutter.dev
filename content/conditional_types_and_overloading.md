@@ -13,9 +13,9 @@ unsatisfactory.
 The intersection between these two features appears to be a common theme from
 helping people on the offically unoffical TypeScript community discord server
 and at work. People try to combine different language features in ways that
-often feel conceptually and syntactically natrual, but often leave theme
-confused and frustrated. Their motivation is type safety, but the result is
-confusing compiler errors.
+often feel conceptually and syntactically natrual, but often leave them confused
+and frustrated. Their motivation is type safety, but the result is confusing
+compiler errors.
 
 <!-- more -->
 
@@ -157,10 +157,10 @@ class Scanner {
 
 The `Scanner` class has two implementations of `addToken`, one that takes a
 single argument and another that takes two. Depending upon the arity (number of
-arugments), one of the two implementations is selected. The convenience of this
-feature is that it groups implementations that conceptually do the same thing,
-and saves defining separate names like `addToken` and `addTokenWithLiteral` for
-all of the possible variants:
+arugments) and arugment types, one of the two implementations is selected. The
+convenience of this feature is that it groups implementations that conceptually
+do the same thing, and saves defining separate names like `addToken` and
+`addTokenWithLiteral` for all of the possible variants:
 
 JavaScript does not have function overloads in the sense that Java does, and by
 extension TypeScript also lacks function overloads in the conventional sense. At
