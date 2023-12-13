@@ -1,33 +1,47 @@
 code,
 pre {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  font-family:
+    Berkeley Mono,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace;
 }
 
-code {
-  padding: 0.25em;
-  font-size: 0.8em;
-  border-radius: 3px;
-  font-weight: 700;
-  background-color: transparent;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+blockquote,
+figure,
+hr {
+  > code {
+    font-size: 0.9rem;
+    padding: 0.15rem 0.4rem;
+    letter-spacing: 0px;
+    border-radius: 3px;
+    background-color: #313135;
+  }
 }
+
 pre {
   display: block;
-  margin-bottom: 1rem;
-  padding: 1em;
-  font-size: 0.8rem;
-  line-height: 1.4;
+  padding: 1rem;
   overflow-x: auto;
-  border-radius: 8px;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  letter-spacing: 0px;
 }
 
-pre code {
-  padding: 0;
-  font-size: 100%;
-  color: inherit;
-  background-color: transparent;
-  font-weight: 500;
-}
 .highlight {
   margin-bottom: 1rem;
   border-radius: 4px;

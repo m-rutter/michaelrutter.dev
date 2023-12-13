@@ -43,8 +43,11 @@ declare const t: Tethera;
 
 // using control flow narrowing to access the correct fields
 if (t.type === "yan") {
-  t.value.toLowerCase(); // ok
-  t.value2.toString(); // property 'value2' does not exist on type '{ type: "yan"; value: string; }'
+  // ok
+  t.value.toLowerCase();
+
+  // property 'value2' does not exist on type '{ type: "yan"; value: string; }'
+  t.value2.toString();
 }
 ```
 
@@ -88,12 +91,13 @@ This is not a very common language feature and is partly why typescript's type
 system is so expressive.
 
 ```ts
-type T2 = 123 extends number ? true : false;
+type T2 = 107 extends number ? true : false;
 //   ^? type T2 = true
 type T3 = "1" extends 1 ? true : false;
 //   ^? type T3 = true
 
-// a type level function that takes a single type as an argument and returns either the type `true` or the type `false`
+// a type level function that takes a single type as an argument
+// and returns either the type `true` or the type `false`
 type Printable<T> = T extends string ? true : false;
 
 type T4 = Printable<{ bar: string }>;
@@ -197,13 +201,16 @@ wrong data type resulting in a runtime type error.
 function yan(tan: string, tethera: number): string;
 function yan(tan: number, tethera: string): number;
 
-// the implementation signature must handle both cases from above, however, the return type of the implementation is not checked against the signatures above
+// the implementation signature must handle both cases from above,
+// however, the return type of the implementation is not checked against the signatures above
 function yan(tan: string | number, tethera: string | number): string | number {
-  // This implementating function body always returns a string, which is incorrect for the second overload signature
+  // This implementating function body always returns a string,
+  // which is incorrect for the second overload signature
   return "";
 }
 
-// When using the 'yan' function with these arugments TypeScript will select the second overload signature
+// When using the 'yan' function with these arugments TypeScript
+// will select the second overload signature
 const num = yan(0, ""); // Expected return type: number
 num.toFixed(0); // Runtime error: toFixed is not a function
 ```
@@ -219,10 +226,12 @@ users of the language construct something along these lines:
 [Playground link](https://www.typescriptlang.org/play?ssl=9&ssc=1&pln=23&pc=2#code/PTAEBUAsEsGdTqAhqALgTwA4FNQBtsA3bPUAMwFcA7AY1WgHsrkqATZUGp16eppUhhxpISVKAC2STPBSxUAJ2hUA5vl7YFAtAw5cFC7LEzdlaodgBQF0AAUlE3tGIBZaQB5wobAA9U2NngAInQkKiDQAB9QINQwoIA+UABeCG8-ANZg0PDQAH5QeSVVUAAuUCoKCQAjTQBuS0sQCBh4FQDNaBpyajpGZiQaGmxMVFlCxTN1fy1SJFlmZUwKcTD2Q1QKBSp4VEhcfUNjUxKpTBx2MgUGCVAGLZ7aPmYAA3toKXpXaRfLVmwaHgkIZHn0mKB2qgAGoCCjYTzpfyBGI5CLRWLxBIACgA1th0OVwABKcrvRxfbBuTCeBINSxcHbiIpmGF4OEpCHYaGw7BYkLxIl1UDNACiPhwdGw6y5W2YFnKzNU9KY8gqVVqClZ7NSkK1vIx4UFwrAYol-mlm22aCw2HKlRqmkazQAcgwAO6gN24MT+CSjHQIP0ECQBcR7XC6nmg56WShPfqc7ls7AASSD2BDVDizwRviRWRR8SiMTi4WxeIJEBJdgcTm+1PASQA3pZQAgyKBcfiUslUvzDaAW222wzVTk9QrJiU+wBNMKgQg8oINYegDay0DjnlC5rgG2gADkipUB4Q8CoDFWsFg0BUVCQ1QIAZsB7JdcpHkbB9boAAvo022gDsu3QHs+1LIIiUHH8RxVMMwgnNUHQUDkABYACYV2HdcrVLPUdzAPdhAPe0NVPRALyvG87wfJ9UF0F83wpKkaW-Nt-x-PZrg9KhsA9EUDAYBQ+VdcQPkwYNQylSCGl-IA)
 
 ```ts
-// This is a type level function and a conditional type that maps a string literal to a corresponding type
+// This is a type level function and a conditional type that maps
+// a string literal to a corresponding type
 type PrimitiveMap<T extends "yan" | "tan"> = T extends "yan" ? string : number;
 
-// This generic function accepts a string literal as an input and returns the corresponding mapped from our function `PrimativeMap`
+// This generic function accepts a string literal as an input and returns
+// the corresponding mapped from our function `PrimativeMap`
 declare function getValue<T extends "yan" | "tan">(key: T): PrimitiveMap<T>;
 
 const stringValue = getValue("yan"); // Expected return type: string

@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Berkeley Mono";
+  font-weight: 100 400;
+  font-display: swap;
+  font-style: normal;
+  src:
+    url("/BerkeleyMono-Regular.woff") format("woff2-variations"),
+    url("/BerkeleyMono-Regular.woff") format("woff2");
+  src: url("/BerkeleyMono-Regular.woff") format("woff2") tech("variations");
+}
+
+@font-face {
+  font-family: "Berkeley Mono";
+  font-weight: 500 900;
+  font-display: swap;
+  font-style: normal;
+  src:
+    url("/BerkeleyMono-Bold.woff") format("woff2-variations"),
+    url("/BerkeleyMono-Bold.woff") format("woff2");
+  src: url("/BerkeleyMono-Bold.woff") format("woff2") tech("variations");
+}
+
+@font-face {
+  font-family: "Berkeley Mono";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+  src:
+    url("/BerkeleyMono-Italic.woff2") format("woff2-variations"),
+    url("/BerkeleyMono-Italic.woff2") format("woff2");
+  src: url("/BerkeleyMono-Italic.woff2") format("woff2") tech("variations");
+}
+
+@font-face {
+  font-family: "Berkeley Mono";
+  font-weight: 500 900;
+  font-display: swap;
+  font-style: italic;
+  src:
+    url("/BerkeleyMono-BoldItalic.woff") format("woff2-variations"),
+    url("/BerkeleyMono-BoldItalic.woff") format("woff2");
+  src: url("/BerkeleyMono-BoldItalic.woff") format("woff2") tech("variations");
+}

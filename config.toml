@@ -17,7 +17,7 @@ feed_filename = "rss.xml"
 feed_limit = 20
 
 taxonomies = [
-    {name = "tags", paginate_by = 5},  # 5 items per page for a term
+    { name = "tags", paginate_by = 5 }, # 5 items per page for a term
 ]
 
 
@@ -26,3 +26,4 @@ taxonomies = [
 [markdown]
 highlight_code = true
 highlight_theme = "ayu-mirage"
+
