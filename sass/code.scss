@@ -29,6 +29,10 @@ hr {
     letter-spacing: 0px;
     border-radius: 3px;
     background-color: #313135;
+
+    @media (prefers-color-scheme: light) {
+      background-color: #eaeaea;
+    }
   }
 }
 
@@ -36,7 +40,7 @@ pre {
   display: block;
   padding: 1rem;
   overflow-x: auto;
-  border-radius: 3px;
+  border-radius: 8px;
   font-size: 0.9rem;
   line-height: 1.4;
   letter-spacing: 0px;
