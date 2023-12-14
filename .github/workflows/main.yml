@@ -1,17 +1,17 @@
 on:
   push:
     branches:
-    - zola
-    
+      - zola
+
 name: Build Github Pages
 jobs:
   build:
     name: shalzz/zola-deploy-action
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3.0.0
-    - uses: shalzz/zola-deploy-action@v0.16.1-1 
-      env:
-        PAGES_BRANCH: master
-        BUILD_DIR: .
-        TOKEN: ${{ secrets.TOKEN }}
+      - uses: actions/checkout@v4
+      - uses: shalzz/zola-deploy-action@v0.17.2-1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAGES_BRANCH: master
+          BUILD_DIR: .
