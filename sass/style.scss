@@ -9,7 +9,7 @@
 .wrapper {
   padding: 2rem;
   display: grid;
-  grid-template-columns: minmax(20px, 1fr) minmax(auto, 90ch) minmax(20px, 1fr);
+  grid-template-columns: minmax(20px, 1fr) minmax(auto, 96ch) minmax(20px, 1fr);
   grid-template-rows: auto 1fr auto;
   grid-row-gap: 2rem;
   grid-template-areas:
