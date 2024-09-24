@@ -1,5 +1,6 @@
 +++
 title = "Risks of Mastodon for Journalists"
+description = "Escape from Musk but end up in a tussle with your employer"
 date = "2022-11-07"
 draft = false
 [taxonomies]
