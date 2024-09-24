@@ -7,10 +7,11 @@
 @import "./code";
 
 .wrapper {
-    padding: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     display: grid;
-    grid-template-columns: minmax(20px, 1fr) minmax(auto, 96ch) minmax(
-            20px,
+    grid-template-columns: minmax(1rem, 1fr) minmax(auto, 96ch) minmax(
+            1rem,
             1fr
         );
     grid-template-rows: auto 1fr auto;
