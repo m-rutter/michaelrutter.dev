@@ -3,27 +3,21 @@ base_url = "https://michaelrutter.dev"
 title = "Some Michael"
 description = "Software Developer, Philosophy PhD Dropout, British, American, Coffee Addict."
 default_language = "en"
-
-# Whether to automatically compile all Sass files in the sass directory
+output_dir = "public"
 compile_sass = true
-
-# Whether to build a search index to be used later on by a JavaScript library
-build_search_index = false
-
-check_external_links = false
-
-generate_feed = true
-feed_filename = "rss.xml"
+generate_feeds = true
+build_search_index = true
+generate_sitemap = true
+generate_robots_txt = true
+feed_filenames = ["atom.xml", "rss.xml"]
 feed_limit = 20
 
 taxonomies = [
     { name = "tags", paginate_by = 5 }, # 5 items per page for a term
 ]
 
-
 [extra]
 
 [markdown]
 highlight_code = true
 highlight_theme = "ayu-mirage"
-
