@@ -51,7 +51,7 @@ type YanTan =  Yan | "tan";
 
 type Tethera = { type: "yan"; value: string } | { type: "tan"; value2: number };
 
-declare const tethera Tethera;
+declare const tethera: Tethera;
 
 // using control flow narrowing to access the correct fields
 if (t.type === "yan") {
