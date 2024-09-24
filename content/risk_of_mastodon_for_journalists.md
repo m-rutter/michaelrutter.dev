@@ -1,36 +1,37 @@
 +++
 title = "Risks of Mastodon for Journalists"
-description = "Or why Stephen Bush of the FT has two newsletters, but does not know it"
 date = "2022-11-07"
 draft = false
 [taxonomies]
 tags = ["journalism", "politics", "twitter", "mastodon", "fediverse"]
 +++
+
 Cathy Newman of Channel 4 News, a UK news broadcaster, asks on Twitter:
 
 > [Ok…Mastodon…erm…which server to use?](https://twitter.com/cathynewman/status/1589384980169625600)
 
 The responses are a combination of mutual confusion and assurances that it does
-not matter and that she can correct any mistake later.
-What all of the responses fail to mention is that she might not have a choice at
-all. In at least one possible future where some version of the
-[fediverse](https://en.wikipedia.org/wiki/Fediverse) prevails, her Mastadon handle will be:
+not matter and that she can correct any mistake later. What all of the responses
+fail to mention is that she might not have a choice at all. In at least one
+possible future where some version of the
+[fediverse](https://en.wikipedia.org/wiki/Fediverse) prevails, her Mastadon
+handle will be:
 
 **`cathy.newman@channel4newsuk.social`**
 
-This has potentially major implications for Newman's future relationships with both
-with her audiences and her employers.
+This has potentially major implications for Newman's future relationships with
+both with her audiences and her employers.
 
 <!-- more -->
 
-Nearly every journalist is invested in what happens to Twitter. It is often their
-first port of call when communicating with their audiences - more so than the
-newspaper, magazine, website, podcast, etc... that they call their employer.
-Having a large following on Twitter is valuable not only to employers to
-drive traffic but to journalists as a means of marketing themselves on the jobs
+Nearly every journalist is invested in what happens to Twitter. It is often
+their first port of call when communicating with their audiences - more so than
+the newspaper, magazine, website, podcast, etc... that they call their employer.
+Having a large following on Twitter is valuable not only to employers to drive
+traffic but to journalists as a means of marketing themselves on the jobs
 market. From the point of view of an employer, hiring a prominent journalist is
-a way of acquiring a new audience. The list of Twitter followers of
-their new hire figures into that hiring decision.
+a way of acquiring a new audience. The list of Twitter followers of their new
+hire figures into that hiring decision.
 
 It is only natural that in an environment where Twitter's new ownership is
 causing at least a sense of chaos and raising reasonable
@@ -42,9 +43,9 @@ responsible for the entire thing. Mastodon is made up of multiple service
 providers in much the same way that Gmail or Microsoft Outlook provides email
 services. Or most pertinently, how your employer can provide email services
 under their own domain. You and your followers can communicate between those
-services without friction in much the same way as you can email someone at
-a different email domain. It is easy for a business such as a newspaper to
-manage its own Mastodon server.
+services without friction in much the same way as you can email someone at a
+different email domain. It is easy for a business such as a newspaper to manage
+its own Mastodon server.
 
 On Mastodon, your followers follow you at your service provider's domain in
 roughly the same way as people subscribe to say an email newsletter. Unlike an
@@ -71,9 +72,9 @@ newsletter for the FT to help drive subscriptions. While his current employer
 owns the list of email newsletter subscribers at the New Statesman, he controls
 a Twitter account, `@stephenkb`, with 140k followers that likely strongly
 overlaps with both his current employer's newsletter and general readership.
-Stephen argues that he can drive new subscriptions to both the FT and this
-new newsletter by soliciting his followers on Twitter. Along with other
-qualities, Bush secures the job and eats well at
+Stephen argues that he can drive new subscriptions to both the FT and this new
+newsletter by soliciting his followers on Twitter. Along with other qualities,
+Bush secures the job and eats well at
 [St John on Marylebone](https://stjohnrestaurant.com/a/restaurants/marylebone).
 
 Except, Bush does not have a Twitter account, as Twitter collapsed years ago.
@@ -100,3 +101,13 @@ own server or some independent and reliable operator(s) for journalists arises
 to take Twitter's place. I think a more likely future is that given the
 opportunity by publishers to take back control over... publishing, they will
 reach for control as quickly as they can to rein in their employees.
+
+#### Update 2024-24-09:
+
+As a relatively recent adoptor of BlueSky I should say that while BlueSky's
+ATProto is a fediverse type project the specific problem raised here does not
+apply. The way that domain handles work there is that they leverage existing DNS
+infrastructure to allow users to retain their account but "borrow" a domain from
+their employer without ceeding control. There might still be questions around
+account portability, but that is certainly no worse than the status quo with
+Twitter/X or existing soical media platforms and does not involve employers.
