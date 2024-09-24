@@ -1,5 +1,6 @@
 +++
-title = "Overloads & Conditional Types in TypeScript"
+title = "Typesafe Function Overloading in TypeScript"
+description = "Common frustrations with no easy solution"
 date = "2023-03-19"
 draft = false
 [taxonomies]
