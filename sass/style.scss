@@ -7,129 +7,135 @@
 @import "./code";
 
 .wrapper {
-  padding: 2rem;
-  display: grid;
-  grid-template-columns: minmax(20px, 1fr) minmax(auto, 96ch) minmax(20px, 1fr);
-  grid-template-rows: auto 1fr auto;
-  grid-row-gap: 2rem;
-  grid-template-areas:
-    ". nav-header ."
-    ". content ."
-    "footer footer footer";
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: minmax(20px, 1fr) minmax(auto, 96ch) minmax(
+            20px,
+            1fr
+        );
+    grid-template-rows: auto 1fr auto;
+    grid-row-gap: 2rem;
+    grid-template-areas:
+        ". nav-header ."
+        ". content ."
+        "footer footer footer";
 }
 
 .top-nav {
-  ul {
-    list-style: none;
-  }
+    ul {
+        list-style: none;
+    }
 }
 
 .header {
-  grid-area: header;
-  display: flex;
-  justify-content: space-between;
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
 }
 
 .nav-header {
-  grid-area: nav-header;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
+    grid-area: nav-header;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .nav-links {
-  list-style: none;
-  margin: 0;
-  margin-left: 5px;
-  padding: 0;
-  li {
+    list-style: none;
+    margin: 0;
     margin-left: 5px;
-    display: inline-block;
-  }
-  a.active {
-    color: #f40000;
-    border-bottom: 2px solid #f40000;
-    :hover {
-      border-color: transparent;
+    padding: 0;
+    li {
+        margin-left: 5px;
+        display: inline-block;
     }
-  }
+    a.active {
+        color: #f40000;
+        border-bottom: 2px solid #f40000;
+        :hover {
+            border-color: transparent;
+        }
+    }
 }
 
 .main {
-  grid-area: content;
-  overflow-x: hidden;
+    grid-area: content;
+    overflow-x: hidden;
 }
 
 .footer {
-  grid-area: footer;
-  height: 100px;
-  display: grid;
-  grid-template-columns: minmax(1rem, 1fr) minmax(auto, 48rem) minmax(1rem, 1fr);
-  align-content: center;
+    grid-area: footer;
+    height: 100px;
+    display: grid;
+    grid-template-columns: minmax(1rem, 1fr) minmax(auto, 48rem) minmax(
+            1rem,
+            1fr
+        );
+    align-content: center;
 }
 
 .contacts {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  li {
-    margin-left: 8px;
-    display: inline-block;
-  }
-  li:first {
-    margin-left: 0;
-  }
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    li {
+        margin-left: 8px;
+        display: inline-block;
+    }
+    li:first {
+        margin-left: 0;
+    }
 }
 
 .mono {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+        "Courier New", monospace;
 }
 
 .header-title {
-  user-select: none;
-  a,
-  a:hover,
-  a:focus,
-  a:active,
-  a:visited {
-    text-decoration: none;
-    color: inherit;
-    border-bottom: none;
-  }
+    user-select: none;
+    a,
+    a:hover,
+    a:focus,
+    a:active,
+    a:visited {
+        text-decoration: none;
+        color: inherit;
+        border-bottom: none;
+    }
 }
 
 article header h2 {
-  margin: 0;
+    margin: 0;
 }
 
 .post-title {
-  text-align: left;
+    text-align: left;
 }
 
 .post-meta {
-  text-align: left;
-  display: flex;
-  gap: 5px;
+    text-align: left;
+    display: flex;
+    gap: 5px;
 
-  > :not(:last-child):after {
-    padding-left: 5px;
-    content: "·";
-  }
+    > :not(:last-child):after {
+        padding-left: 5px;
+        content: "·";
+    }
 }
 
 .post-header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
 }
 
 .posts {
-  display: flex;
-  flex-direction: column;
-  grid-row-gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 1rem;
 }
