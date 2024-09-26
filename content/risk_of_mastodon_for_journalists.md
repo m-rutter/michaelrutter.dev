@@ -2,6 +2,7 @@
 title = "Risks of Mastodon for Journalists"
 description = "Escape from Musk but end up in a tussle with your employer"
 date = "2022-11-07"
+updated = "2024-09-24"
 draft = false
 [taxonomies]
 tags = ["journalism", "politics", "twitter", "mastodon", "fediverse"]
@@ -102,7 +103,7 @@ to take Twitter's place. I think an unfortunately more likely future is that
 given the opportunity by publishers to take back control over... publishing,
 they will reach for control as quickly as they can to rein in their employees.
 
-#### Update 2024-24-09:
+#### Update 2024-09-24:
 
 As a relatively recent adoptor of BlueSky I should say that while BlueSky's
 ATProto is a fediverse type project the specific problem raised here does not

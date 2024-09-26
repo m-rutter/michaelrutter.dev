@@ -120,12 +120,8 @@ article header h2 {
 .post-meta {
     text-align: left;
     display: flex;
-    gap: 5px;
-
-    > :not(:last-child):after {
-        padding-left: 5px;
-        content: "·";
-    }
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .post-header {
@@ -139,4 +135,20 @@ article header h2 {
     display: flex;
     flex-direction: column;
     grid-row-gap: 1rem;
+}
+
+.slab {
+    display: inline-block;
+    margin: 0;
+
+    dt {
+        font-size: 0.7rem;
+        line-height: 1.15;
+    }
+
+    dd {
+        font-size: 0.9rem;
+        font-weight: 700;
+        margin-left: 0;
+    }
 }

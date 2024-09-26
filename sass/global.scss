@@ -46,9 +46,9 @@ a {
     transition-duration: 0.2s;
     border-bottom: 1px solid #ffa759;
     font-weight: 700;
-}
 
-a:hover {
-    border-color: transparent;
-    color: #ffa759;
+    &:hover {
+        border-color: transparent;
+        color: #ffa759;
+    }
 }

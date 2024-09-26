@@ -83,13 +83,35 @@
             </a>
             <h4>{{page.description}}</h4>
             <section>
-              <section class="post-meta">
-                <time datetime="{{ page.date }}"
-                  >{{ page.date | date(format="%d %B %Y") }}</time
-                >
-                <div>Reading time: {{ page.reading_time }} minutes</div>
-              </section>
-            </section>
+                <section class="post-meta">
+                    <dl class="slab">
+                        <dt>
+                            Reading time
+                        </dt>
+                        <dd>
+                            {{ page.reading_time }} minutes
+                        </dd>
+                    </dl>
+
+                    <dl class="slab">
+                        <dt>
+                            Published
+                        </dt>
+                        <dd>
+                            <time datetime="{{ page.date }}">{{ page.date | date(format="%d %b %Y") }}</time>
+                        </dd>
+                    </dl>
+                    {% if page.updated %}
+                    <dl class="slab">
+                            <dt>
+                                Last updated
+                            </dt>
+                            <dd>
+                                <time datetime="{{ page.updated }}">{{ page.updated | date(format="%d %b %Y") }}</time>
+                            </dd>
+                    </dl>
+                    {% endif %}
+                </section>
           </header>
           <div class="post__summary">{{ page.summary | safe }}</div>
           <div class="read-more">
