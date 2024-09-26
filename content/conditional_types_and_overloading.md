@@ -337,12 +337,6 @@ other language features, we have failed to achieve type-safe overloading
 function bodies. In both cases, we were successfully able to create APIs that
 might be desirable for consumers but left implementers without assistance.
 
-The lesson I hope you take away is that if you went down this path, you aren't
-alone. Many others thought it might be possible to combine these features, but
-the language as it stands today does not enable this pattern. However, this
-shouldn't discourage you from seeking alternative solutions. So, as some parting
-words, I can suggest some advice for moving forward.
-
 ### Solution 1: Implement separate functions
 
 Take a step back. Reconsider the problem the Java case was trying to solve. They
@@ -389,4 +383,4 @@ typesafe function overloads in TypeScript. So yeah... sorry about that! However,
 the more important point was its clear to see why someone might think combining
 these features might work and maybe in future versions of TypeScript it might,
 though I suspect it might not be a priority and might incur performance or
-complexity costs for implementors.
+complexity costs for implementors and users of conditional types.

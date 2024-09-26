@@ -18,7 +18,7 @@ possible future where some version of the
 [fediverse](https://en.wikipedia.org/wiki/Fediverse) prevails, her Mastadon
 handle will be:
 
-**`cathy.newman@channel4newsuk.social`**
+**`cathy.newman@channel4.com`**
 
 This has potentially major implications for Newman's future relationships with
 both with her audiences and her employers.
@@ -67,41 +67,40 @@ Let us imagine a scenario based on real events in the last year.
 [Stephen Bush](https://twitter.com/stephenkb) is a political editor at the New
 Statesman. He maintains a daily morning email newsletter that gets sent from his
 work email account, `stephen.bush@newstatesman.co.uk`. Later, Bush is
-interviewing for a role as a political editor at the Financial Times, a role he
-desires for the larger dining expense budget. He explains that he could write a
-newsletter for the FT to help drive subscriptions. While his current employer
-owns the list of email newsletter subscribers at the New Statesman, he controls
-a Twitter account, `@stephenkb`, with 140k followers that likely strongly
-overlaps with both his current employer's newsletter and general readership.
-Stephen argues that he can drive new subscriptions to both the FT and this new
-newsletter by soliciting his followers on Twitter. Along with other qualities,
-Bush secures the job and eats well at
+interviewing for a role as at the Financial Times, a role he desires for the
+[larger dining expense budget](https://www.ft.com/life-arts/lunch-with-the-ft).
+He explains that he could write a newsletter for the FT to help drive
+subscriptions. While his current employer owns the list of email newsletter
+subscribers at the New Statesman, he controls a Twitter account, `@stephenkb`,
+with 140k followers that likely strongly overlaps with both his current
+employer's newsletter and general readership. Stephen argues that he can drive
+new subscriptions to both the FT and this new newsletter by soliciting his
+followers on Twitter. Along with other qualities, Bush secures the job and eats
+well at
 [St John on Marylebone](https://stjohnrestaurant.com/a/restaurants/marylebone).
 
 Except, Bush does not have a Twitter account, as Twitter collapsed years ago.
 Instead Bush has a Mastadon account that he uses for work,
-`stephen.k.bush@newsstateman.social`, and which he is obligated to use for work
-purposes. It does not quite have as many followers (roughly 90k) as his
-imaginary Twitter account because his previous employer at the Telegraph did not
-allow him to move his followers when he changed jobs. He lost control over that
-work account at the end of his previous employment.
+`stephen.k.bush@newsstateman.com`, and which he is obligated to use for work
+purposes. It does not quite have as many followers (roughly 90k) as he keeps
+losing his followers with the churn of each job. He lost control his previous
+follower list at the end of his previous employment.
 
 When Bush interviews for the FT he argues that he could drive more
 subscriptions, but without being able to credibly say he can solicit all of his
 followers at the New Statesman his interviewer finds this argument less
-credible. The FT still offers Bush a job, but with less generous terms. So
-Stephen decides to stay at the New Statesman and cries into an overcooked
+credible. Bush ends up staying at the New Statesman and cries into an overcooked
 English Breakfast at a nearby greasy spoon at the next Labour Party conference.
 
-Stephen Bush's work Mastadon account is as transferable and under his control as
-his work email account is - not at all.
+Bush's work Mastadon account is as transferable and under his control as his
+work email account is - not at all.
 
 If something like Mastadon ends up taking the place of Twitter a best case
 scenario for maintaining the status quo is that each journalist self-hosts their
 own server or some independent and reliable operator(s) for journalists arises
-to take Twitter's place. I think a more likely future is that given the
-opportunity by publishers to take back control over... publishing, they will
-reach for control as quickly as they can to rein in their employees.
+to take Twitter's place. I think an unfortunately more likely future is that
+given the opportunity by publishers to take back control over... publishing,
+they will reach for control as quickly as they can to rein in their employees.
 
 #### Update 2024-24-09:
 
