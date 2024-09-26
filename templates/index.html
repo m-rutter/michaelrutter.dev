@@ -78,10 +78,10 @@
         {% for page in paginator.pages %}
         <article class="post">
           <header class="post-header">
-            <a href="{{ page.permalink }}">
-              <h1>{{page.title}}</h1>
-            </a>
-            <h4>{{page.description}}</h4>
+              <a href="{{ page.permalink }}">
+                <h1 class="post-title f3">{{ page.title }}</h1>
+              </a>
+              <h4 class="post-title f5">{{ page.description }}</h4>
             <section>
                 <section class="post-meta">
                     <dl class="slab">
