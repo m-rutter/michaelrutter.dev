@@ -71,9 +71,8 @@ elsewhere might be called tagged unions, disjoint unions, or sum types.
 TypeScript uses the language's control flow constructs to "narrow" union types,
 as demonstrated with the value `tethera` above.
 
-For more on narrowing, the TypeScript
-[handbook chapter on narrowing](https://www.typescriptlang.org/docs/handbook/2/narrowing.html)
-is a must read for new users:
+For more on narrowing, the TypeScript [handbook chapter on narrowing][1] is a
+must read for new users:
 
 ### Generics
 
@@ -255,7 +254,7 @@ function signature that does check our work? After surveying the features of
 unions and control flow based narrowing, conditional types, and generics, many
 users of the language construct something along these lines:
 
-[Playground link](https://www.typescriptlang.org/play?ssl=9&ssc=1&pln=23&pc=2#code/PTAEBUAsEsGdTqAhqALgTwA4FNQBtsA3bPUAMwFcA7AY1WgHsrkqATZUGp16eppUhhxpISVKAC2STPBSxUAJ2hUA5vl7YFAtAw5cFC7LEzdlaodgBQF0AAUlE3tGIBZaQB5wobAA9U2NngAInQkKiDQAB9QINQwoIA+UABeCG8-ANZg0PDQAH5QeSVVUAAuUCoKCQAjTQBuS0sQCBh4FQDNaBpyajpGZiQaGmxMVFlCxTN1fy1SJFlmZUwKcTD2Q1QKBSp4VEhcfUNjUxKpTBx2MgUGCVAGLZ7aPmYAA3toKXpXaRfLVmwaHgkIZHn0mKB2qgAGoCCjYTzpfyBGI5CLRWLxBIACgA1th0OVwABKcrvRxfbBuTCeBINSxcHbiIpmGF4OEpCHYaGw7BYkLxIl1UDNACiPhwdGw6y5W2YFnKzNU9KY8gqVVqClZ7NSkK1vIx4UFwrAYol-mlm22aCw2HKlRqmkazQAcgwAO6gN24MT+CSjHQIP0ECQBcR7XC6nmg56WShPfqc7ls7AASSD2BDVDizwRviRWRR8SiMTi4WxeIJEBJdgcTm+1PASQA3pZQAgyKBcfiUslUvzDaAW222wzVTk9QrJiU+wBNMKgQg8oINYegDay0DjnlC5rgG2gADkipUB4Q8CoDFWsFg0BUVCQ1QIAZsB7JdcpHkbB9boAAvo022gDsu3QHs+1LIIiUHH8RxVMMwgnNUHQUDkABYACYV2HdcrVLPUdzAPdhAPe0NVPRALyvG87wfJ9UF0F83wpKkaW-Nt-x-PZrg9KhsA9EUDAYBQ+VdcQPkwYNQylSCGl-IA)
+[Playground link][2]
 
 ```ts
 // This is a type level function and a conditional type that maps
@@ -371,10 +370,7 @@ overloaded signatures. This will be in the form of extensive testing. This is a
 corner of the language where you aren't going to get much compiler help, but it
 might be a worthwhile sacrifice for your users.
 
-Additionally, you could make use of
-[runtime assertions](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#assertion-functions)
-or
-[type guards](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates)
+Additionally, you could make use of [runtime assertions][3] or [type guards][4]
 to pass the function arguments to more specialized functions like in solution 1
 example.
 
@@ -384,3 +380,11 @@ the more important point was it's clear to see why someone might think combining
 these features might work and maybe in future versions of TypeScript it might,
 though I suspect it might not be a priority and might incur performance or
 complexity costs for implementors and users of conditional types.
+
+[1]: https://www.typescriptlang.org/docs/handbook/2/narrowing.html
+[2]:
+  https://www.typescriptlang.org/play?ssl=9&ssc=1&pln=23&pc=2#code/PTAEBUAsEsGdTqAhqALgTwA4FNQBtsA3bPUAMwFcA7AY1WgHsrkqATZUGp16eppUhhxpISVKAC2STPBSxUAJ2hUA5vl7YFAtAw5cFC7LEzdlaodgBQF0AAUlE3tGIBZaQB5wobAA9U2NngAInQkKiDQAB9QINQwoIA+UABeCG8-ANZg0PDQAH5QeSVVUAAuUCoKCQAjTQBuS0sQCBh4FQDNaBpyajpGZiQaGmxMVFlCxTN1fy1SJFlmZUwKcTD2Q1QKBSp4VEhcfUNjUxKpTBx2MgUGCVAGLZ7aPmYAA3toKXpXaRfLVmwaHgkIZHn0mKB2qgAGoCCjYTzpfyBGI5CLRWLxBIACgA1th0OVwABKcrvRxfbBuTCeBINSxcHbiIpmGF4OEpCHYaGw7BYkLxIl1UDNACiPhwdGw6y5W2YFnKzNU9KY8gqVVqClZ7NSkK1vIx4UFwrAYol-mlm22aCw2HKlRqmkazQAcgwAO6gN24MT+CSjHQIP0ECQBcR7XC6nmg56WShPfqc7ls7AASSD2BDVDizwRviRWRR8SiMTi4WxeIJEBJdgcTm+1PASQA3pZQAgyKBcfiUslUvzDaAW222wzVTk9QrJiU+wBNMKgQg8oINYegDay0DjnlC5rgG2gADkipUB4Q8CoDFWsFg0BUVCQ1QIAZsB7JdcpHkbB9boAAvo022gDsu3QHs+1LIIiUHH8RxVMMwgnNUHQUDkABYACYV2HdcrVLPUdzAPdhAPe0NVPRALyvG87wfJ9UF0F83wpKkaW-Nt-x-PZrg9KhsA9EUDAYBQ+VdcQPkwYNQylSCGl-IA
+[3]:
+  https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#assertion-functions
+[4]:
+  https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates
