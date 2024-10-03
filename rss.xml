@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Some Michael</title>
+      <link>https://michaelrutter.dev</link>
+      <description>Software Developer, Philosophy PhD Dropout, British, American, Coffee Addict.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://michaelrutter.dev/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Tue, 24 Sep 2024 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Typesafe Function Overloading in TypeScript</title>
+          <pubDate>Sun, 19 Mar 2023 00:00:00 +0000</pubDate>
+          <author>Michael Rutter</author>
+          <link>https://michaelrutter.dev/conditional-types-and-overloading/</link>
+          <guid>https://michaelrutter.dev/conditional-types-and-overloading/</guid>
+          <description xml:base="https://michaelrutter.dev/conditional-types-and-overloading/">&lt;p&gt;In the course of helping other developers new to TypeScript, there are various
+common patterns of frustration that I encounter. Two broad categories of
+problems:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type 1: Users get frustrated that certain patterns that are common in some
+JavaScript codebases are difficult to express in a typesafe way in TypeScript.
+Typically this involves some form of runtime reflection, which I&#x27;m not going
+to talk about today and is typically a problem for less experienced or
+especially stubborn users (sometimes legitimate stubbornness!).&lt;&#x2F;li&gt;
+&lt;li&gt;Type 2: Users understanding TypeScript features in isolation and get confused
+when they try to combine them in ways that seem conceptually natural, but do
+not work as expected. This is often simply because this combination of
+features has not been implemented yet and may never be implemented.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;So we are going to talk about a type 2 problem, specifically function
+overloading and conditional types in TypeScript, which is an area of the
+language that I think lots of people find unsatisfactory and I&#x27;ve seen recreated
+countless times. The intersection between these two features appears to be a
+common theme from helping people on the officially unofficial TypeScript
+community discord server and at work. The motivation is type safety, but the
+result is confusing compiler errors.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Risks of Mastodon for Journalists</title>
+          <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
+          <author>Michael Rutter</author>
+          <link>https://michaelrutter.dev/risk-of-mastodon-for-journalists/</link>
+          <guid>https://michaelrutter.dev/risk-of-mastodon-for-journalists/</guid>
+          <description xml:base="https://michaelrutter.dev/risk-of-mastodon-for-journalists/">&lt;p&gt;Cathy Newman of Channel 4 News, a UK news broadcaster, asks on Twitter:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;cathynewman&#x2F;status&#x2F;1589384980169625600&quot;&gt;Ok…Mastodon…erm…which server to use?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;The responses are a combination of mutual confusion and assurances that it does
+not matter and that she can correct any mistake later. What all of the responses
+fail to mention is that she might not have a choice at all. In at least one
+possible future where some version of the &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Fediverse&quot;&gt;fediverse&lt;&#x2F;a&gt; prevails, her Mastodon
+handle will be:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;cathy.newman@channel4.com&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;This has potentially major implications for Newman&#x27;s future relationships with
+both with her audiences and her employers.&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>
