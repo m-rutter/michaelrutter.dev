@@ -44,11 +44,19 @@ a {
     text-decoration: none;
     transition-property: border, color;
     transition-duration: 0.2s;
-    border-bottom: 1px solid #ffa759;
     font-weight: 700;
 
     &:hover {
-        border-color: transparent;
         color: #ffa759;
+    }
+}
+
+p {
+    a {
+        border-bottom: 1px solid #ffa759;
+        &:hover {
+            border-color: transparent;
+            color: #ffa759;
+        }
     }
 }
