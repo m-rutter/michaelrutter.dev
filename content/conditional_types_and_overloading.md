@@ -7,27 +7,22 @@ draft = false
 tags = ["typescript", "programming", "types", "java", "type-level-programming"]
 +++
 
-In the course of helping other developers new to TypeScript, there are various
-common patterns of frustration that I encounter. Two broad categories of
-problems:
+When helping developers new to TypeScript, I encounter several common patterns
+of frustration. Two broad categories:
 
-- Type 1: Users get frustrated that certain patterns that are common in some
-  JavaScript codebases are difficult to express in a typesafe way in TypeScript.
-  Typically this involves some form of runtime reflection, which I'm not going
-  to talk about today and is typically a problem for less experienced or
-  especially stubborn users (sometimes legitimate stubbornness!).
-- Type 2: Users understanding TypeScript features in isolation and get confused
-  when they try to combine them in ways that seem conceptually natural, but do
-  not work as expected. This is often simply because this combination of
-  features has not been implemented yet and may never be implemented.
+- Type 1: Users get frustrated that certain JavaScript patterns are hard to
+  express safely in TypeScript. This typically involves runtime reflection,
+  which I won't discuss today and is usually an issue for less experienced or
+  stubborn users (sometimes legitimately!).
+- Type 2: Users understand TypeScript features in isolation but get confused
+  combining them in seemingly natural ways that don't work as expected. Often
+  this is simply because the feature combination hasn't been implemented.
 
-So we are going to talk about a type 2 problem, specifically function
-overloading and conditional types in TypeScript, which is an area of the
-language that I think lots of people find unsatisfactory and I've seen recreated
-countless times. The intersection between these two features appears to be a
-common theme from helping people on the officially unofficial TypeScript
-community discord server and at work. The motivation is type safety, but the
-result is confusing compiler errors.
+We'll focus on a type 2 problem: function overloading and conditional types in
+TypeScript. This is an area many find unsatisfactory and I've seen attempted
+countless times. The intersection of these features comes up often in the
+TypeScript Discord and at work. The goal is type safety, but the result is
+confusing compiler errors.
 
 <!-- more -->
 
@@ -155,37 +150,36 @@ conventional example from Java of an overloaded method called `addToken`:
 
 ```java
 class Scanner {
-	// ...
+    // ...
 
-	// This implementation takes a single argument of type `TokenType`
-	private void addToken(TokenType type) {
-	    // ...
-	}
+    // This implementation takes a single argument of type `TokenType`
+    private void addToken(TokenType type) {
+        // ...
+    }
 
-	// This implementation takes two arguments of type `TokenType` and `Object`
-	private void addToken(TokenType type, Object literal) {
-	    // ...
-	}
+    // This implementation takes two arguments of type `TokenType` and `Object`
+    private void addToken(TokenType type, Object literal) {
+        // ...
+    }
 
-	private void scanToken() {
-  		// ...
-  		switch (c) {
-  			case '(':
-  							// This calls the first implementation
-  				addToken(TokenType.LEFT_PAREN);
-  				break;
-  			// ...
-  		}
-	}
+    private void scanToken() {
+        // ...
+        switch (c) {
+            case '(':
+                // This calls the first implementation
+                addToken(TokenType.LEFT_PAREN);
+                break;
+                // ...
+        }
+    }
 
-	private void string() {
-		// ...
-		// This calls the second implementation
-		addToken(TokenType.STRING, value);
-		// ...
-	}
+    private void string() {
+        // ...
+        // This calls the second implementation
+        addToken(TokenType.STRING, value);
+        // ...
+    }
 }
-
 ```
 
 The Java `Scanner` class has two implementations of `addToken`; one that takes a
@@ -333,8 +327,8 @@ function tan<T extends string>(_: T) {
 
 In both the built-in function overloads and our experimentation with combining
 other language features, we have failed to achieve type-safe overloading
-function bodies. In both cases, we were successfully able to create APIs that
-might be desirable for consumers but left implementers without assistance.
+function bodies. While we created nice APIs for consumers, implementers get no
+help from the compiler.
 
 ### Solution 1: Implement separate functions
 
