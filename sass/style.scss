@@ -7,15 +7,11 @@
 @import "./code";
 
 .wrapper {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1ch;
     display: grid;
-    grid-template-columns: minmax(1rem, 1fr) minmax(auto, 96ch) minmax(
-            1rem,
-            1fr
-        );
+    grid-template-columns: minmax(1ch, 1fr) minmax(auto, 96ch) minmax(1ch, 1fr);
     grid-template-rows: auto 1fr auto;
-    grid-row-gap: 2rem;
+    grid-row-gap: 1em;
     grid-template-areas:
         ". nav-header ."
         ". content ."

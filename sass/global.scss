@@ -1,7 +1,8 @@
 html,
 body {
     font-size: 16px;
-    line-height: 1.5em;
+    letter-spacing: 0.5px;
+    line-height: 1.6em;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: #000;
@@ -19,7 +20,8 @@ body {
 }
 
 p {
-    line-height: 1.625em;
+    word-wrap: break-word;
+    letter-spacing: 0.9px;
 }
 
 h1,
@@ -36,7 +38,6 @@ h4,
 h5,
 h6 {
     margin: 0;
-    letter-spacing: -0.02em;
 }
 
 a {
